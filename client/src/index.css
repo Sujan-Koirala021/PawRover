@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root,
+.app {
+  font-family: 'Poppins';
+  @apply  text-gray-700 bg-gray-100
+}
+a:hover {
+  @apply transition duration-200;
+  @apply text-gray-700
+}
+
+.button{
+  @apply rounded-full text-lg border-2  border-none py-2 px-4 text-white bg-black hover:bg-green-900 hover:text-gray-100 
+}
