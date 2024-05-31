@@ -1,30 +1,60 @@
-import React from 'react'
-import appLogo from '../assets/images/app-logo.png'
+import React, { useState } from 'react';
+import appLogo from '../assets/images/app-logo.png';
 
 export default function NavBar() {
+    const [isDropDownOpen, setDropDown] = useState(false);
+
+    const handleClick = () => {
+        console.log("Handled click");
+        setDropDown(!isDropDownOpen);
+    };
+
     return (
-        <div>
-            <nav className='pt-2 pb-2 pl-6 pr-6 '>
-                <div className='flex justify-between items-center'>
-                    <div className='flex items-center'>
-                        <img src={appLogo} alt="app logo" className='pr-1 w-20 scale-150'/>
-                        <div className='text-2xl pr-7 '>PawRover</div>
-                        {/* <img src={appLogo} alt="app logo" style={{ paddingRight: '16px', height: '64px', width: '64px' }} /> */}
-                        <div className='pr-6'>Find pet sitter</div>
-                        <div>Find house sit</div>
+        <nav className='bg-white shadow-lg py-4 px-6'>
+            <div className='flex justify-between items-center'>
+                <div className='flex items-center'>
+                    <img src={appLogo} alt="app logo" className='w-12 h-12 mr-3' />
 
-                    </div>
-                    <div className='flex items-center'>
-                        <div className='pr-6'>About</div>
-                        <div className='pr-6'>How we work</div>
-                        <div className='button'>Contact Us</div>
-
+                    <div className='text-2xl font-bold mr-7 text-gray-900'>PawRover</div>
+                    <div className='hidden md:flex space-x-6'>
+                        <a href="#" className='text-gray-700 hover:text-gray-900'>Find pet sitter</a>
+                        <a href="#" className='text-gray-700 hover:text-gray-900'>Find house sit</a>
                     </div>
                 </div>
-            </nav>
-
-
-        </div>
-
-    )
+                <div className='hidden lg:flex space-x-6 items-center'>
+                    <a href="#" className='text-gray-700 hover:text-gray-900'>About</a>
+                    <a href="#" className='text-gray-700 hover:text-gray-900'>How we work</a>
+                    <a href="#" className='text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded'>Contact Us</a>
+                </div>
+                <button
+                    id="menu-button"
+                    className="lg:hidden flex items-center px-3 py-2 border rounded text-gray-700 border-gray-700"
+                    aria-label="Menu"
+                    aria-expanded={isDropDownOpen}
+                    onClick={handleClick}
+                >
+                    {isDropDownOpen ? (
+                        <svg className="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Close</title>
+                            <path d="M10 8.586L16.95 1.636a1 1 0 011.414 1.414L11.414 10l6.95 6.95a1 1 0 01-1.414 1.414L10 11.414l-6.95 6.95a1 1 0 01-1.414-1.414L8.586 10 1.636 3.05A1 1 0 013.05 1.636L10 8.586z" />
+                        </svg>
+                    ) : (
+                        <svg className="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                        </svg>
+                    )}
+                </button>
+            </div>
+            {isDropDownOpen && (
+                <div className="lg:hidden mt-2 flex flex-col space-y-4">
+                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>Find pet sitter</a>
+                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>Find house sit</a>
+                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>About</a>
+                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>How we work</a>
+                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>Contact Us</a>
+                </div>
+            )}
+        </nav>
+    );
 }
