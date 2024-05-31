@@ -1,11 +1,17 @@
 import './App.css'
 import React from 'react'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
-      <div className='underline text-red-600 pt-24'>Hello MY frands</div>
+      <NavBar/>   
+      <hr />
+
+      <Footer/>    
+
     </>
   )
 }
