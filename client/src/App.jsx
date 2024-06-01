@@ -12,6 +12,7 @@ import FindHouseSit from './components/FindHouseSit'
 import FindPetSitter from './components/FindPetSitter'
 import FAQ from './components/faq'
 import Contact from './components/Contact'
+import SearchResults from './components/SearchResults'
 function App() {
   const Layout = () => {
     return (
@@ -60,10 +61,10 @@ function App() {
           element : <Contact/>
         },
 
-        // {
-        //   path : '/name-cards',
-        //   element: <NameCardPage/>
-        // }
+        {
+          path : '/search-results',
+          element: <SearchResults/>
+        }
       ]
     },
 
