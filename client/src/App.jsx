@@ -4,13 +4,16 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import TourButton from './components/TourButton'
+import AboutUs from './pages/AboutUs'
 function App() {
 
   return (
     <>
       <NavBar/>   
       <hr />
-    <Hero/>
+    {/* <Hero/> */}
+
+    <AboutUs/>
     <TourButton/>
       <Footer/>    
 
