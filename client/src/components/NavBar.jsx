@@ -28,6 +28,8 @@ export default function NavBar() {
                     </div>
                 </div>
                 <div className='hidden lg:flex space-x-6 items-center'>
+                <Link to="faq" className='text-gray-700 hover:text-gray-900'>FAQ</Link>
+
                     <Link to="about" className='text-gray-700 hover:text-gray-900'>About</Link>
                     <Link to="how-it-works" className='text-gray-700 hover:text-gray-900'>How it works</Link>
                     <a href="#" className='text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded'>Contact Us</a>

@@ -10,6 +10,7 @@ import AboutUs from './pages/AboutUs'
 import HowWeWork from './components/HowWeWork'
 import FindHouseSit from './components/FindHouseSit'
 import FindPetSitter from './components/FindPetSitter'
+import FAQ from './components/faq'
 function App() {
   const Layout = () => {
     return (
@@ -48,7 +49,11 @@ function App() {
         {
           path: '/find-house-sit',
           element: <FindHouseSit />
-        }
+        },
+        {
+          path: '/faq',
+          element : <FAQ/>
+        },
 
         // {
         //   path : '/name-cards',
