@@ -8,6 +8,8 @@ import Hero from './components/Hero'
 import TourButton from './components/TourButton'
 import AboutUs from './pages/AboutUs'
 import HowWeWork from './components/HowWeWork'
+import FindHouseSit from './components/FindHouseSit'
+import FindPetSitter from './components/FindPetSitter'
 function App() {
   const Layout = () => {
     return (
@@ -39,6 +41,15 @@ function App() {
           path: '/how-it-works',
           element: <HowWeWork />
         },
+        {
+          path: '/find-pet-sitter',
+          element: < FindPetSitter/>
+        },
+        {
+          path: '/find-house-sit',
+          element: <FindHouseSit />
+        }
+
         // {
         //   path : '/name-cards',
         //   element: <NameCardPage/>

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
+
 import appLogo from '../assets/images/app-logo.png';
+
 
 export default function NavBar() {
     const [isDropDownOpen, setDropDown] = useState(false);
@@ -13,17 +16,20 @@ export default function NavBar() {
         <nav className='bg-white shadow-lg py-4 px-6'>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center'>
+                    <Link to="/">
+
                     <img src={appLogo} alt="app logo" className='w-12 h-12 mr-3' />
+                    </Link>
 
                     <div className='text-2xl font-bold mr-7 text-gray-900'>PawRover</div>
                     <div className='hidden md:flex space-x-6'>
-                        <a href="#" className='text-gray-700 hover:text-gray-900'>Find pet sitter</a>
-                        <a href="#" className='text-gray-700 hover:text-gray-900'>Find house sit</a>
+                        <Link to="find-pet-sitter" className='text-gray-700 hover:text-gray-900'>Find pet sitter</Link>
+                        <Link to="find-house-sit" className='text-gray-700 hover:text-gray-900'>Find house sit</Link>
                     </div>
                 </div>
                 <div className='hidden lg:flex space-x-6 items-center'>
-                    <a href="#" className='text-gray-700 hover:text-gray-900'>About</a>
-                    <a href="#" className='text-gray-700 hover:text-gray-900'>How it works</a>
+                    <Link to="about" className='text-gray-700 hover:text-gray-900'>About</Link>
+                    <Link to="how-it-works" className='text-gray-700 hover:text-gray-900'>How it works</Link>
                     <a href="#" className='text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded'>Contact Us</a>
                 </div>
                 <button
