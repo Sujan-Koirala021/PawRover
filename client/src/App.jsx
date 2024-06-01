@@ -11,6 +11,7 @@ import HowWeWork from './components/HowWeWork'
 import FindHouseSit from './components/FindHouseSit'
 import FindPetSitter from './components/FindPetSitter'
 import FAQ from './components/faq'
+import Contact from './components/Contact'
 function App() {
   const Layout = () => {
     return (
@@ -53,6 +54,10 @@ function App() {
         {
           path: '/faq',
           element : <FAQ/>
+        },
+        {
+          path: '/contact',
+          element : <Contact/>
         },
 
         // {

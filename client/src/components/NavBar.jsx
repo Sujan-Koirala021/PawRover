@@ -32,7 +32,7 @@ export default function NavBar() {
 
                     <Link to="about" className='text-gray-700 hover:text-gray-900'>About</Link>
                     <Link to="how-it-works" className='text-gray-700 hover:text-gray-900'>How it works</Link>
-                    <a href="#" className='text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded'>Contact Us</a>
+                    <Link to="contact" className='text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded'>Contact Us</Link>
                 </div>
                 <button
                     id="menu-button"
@@ -56,11 +56,11 @@ export default function NavBar() {
             </div>
             {isDropDownOpen && (
                 <div className="lg:hidden mt-2 flex flex-col space-y-4">
-                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>Find pet sitter</a>
-                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>Find house sit</a>
-                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>About</a>
-                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>How we work</a>
-                    <a href="#" className='text-gray-700 hover:text-gray-900 p-2'>Contact Us</a>
+                    <Link to="find-pet-sitter" className='text-gray-700 hover:text-gray-900 p-2'>Find pet sitter</Link>
+                    <Link to="find-house-sit" className='text-gray-700 hover:text-gray-900 p-2'>Find house sit</Link>
+                    <Link to="about" className='text-gray-700 hover:text-gray-900 p-2'>About</Link>
+                    <Link to="how-it-works" className='text-gray-700 hover:text-gray-900 p-2'>How it Works</Link>
+                    <Link to="contact" className='text-gray-700 hover:text-gray-900 p-2'>Contact Us</Link>
                 </div>
             )}
         </nav>
