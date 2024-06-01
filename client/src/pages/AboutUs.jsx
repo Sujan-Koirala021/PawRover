@@ -50,6 +50,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+      
 
       <section>
         <h2 className="text-3xl font-semibold mb-8 text-gray-800 text-center">Meet Our Team</h2>
