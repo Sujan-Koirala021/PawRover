@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import heroImage from '../assets/images/pet-sitter-hero.jpg';
 
 const Hero = () => {
@@ -15,8 +16,15 @@ const Hero = () => {
                     <p className="text-lg md:text-xl max-w-md">Uncover special homestays across the globe, exchanging care for adorable pets for a free stay.
                     </p>
                     {/* <Link to='/home'> */}
-                    <button className="hero-button mr-12">Find a Pet Sitter &gt;</button>
-                    <button className="hero-button ml-6">Explore Homes to Sit &gt;</button>
+                    <Link to='/find-pet-sitter'>
+
+                        <button className="hero-button mr-12">Find a Pet Sitter &gt;</button>
+                    </Link>
+                    <Link to='/find-house-sit'>
+                        <button className="hero-button ml-6">Explore Homes to Sit &gt;</button>
+
+                    </Link>
+
 
                     {/* </Link> */}
                 </div>

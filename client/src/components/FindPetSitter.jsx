@@ -2,21 +2,18 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TiTick } from "react-icons/ti";
 
-
 export default function FindPetSitter() {
-
-
-
-  const navigateTo = useNavigate();
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
+  const [location, setLocation] = useState('');
   const [selectedPets, setSelectedPets] = useState([]);
 
   const handleNext = () => {
     if (step < 3) {
       setStep(step + 1);
     } else {
-      // Redirect to search results page
-      navigateTo('/search-results');
+      // Redirect to search results page with state
+      navigate('/search-results', { state: { location, selectedPets } });
     }
   };
 
@@ -53,11 +50,13 @@ export default function FindPetSitter() {
         {step === 1 && (
           <div>
             <h1 className="text-4xl font-bold mb-10">Let’s find your perfect pet sitter</h1>
-            <label htmlFor="location mt-8">Your Location</label>
+            <label htmlFor="location" className="mt-8">Your Location</label>
             <input
               type="text"
               placeholder="Continent, country, town or city"
               className="w-full p-2 border rounded mb-4 mt-4"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             />
             <button
               onClick={handleNext}
@@ -99,20 +98,17 @@ export default function FindPetSitter() {
 
         {step === 3 && (
           <div>
-          <h1 className="text-4xl font-bold mb-4">Yosh! All good..</h1>
-          <p>Get ready to explore! Your information has been received. Let's discover new possibilities together.</p>
-          <button
-            onClick={handleNext}
-            className="w-full py-2 px-4 bg-green-600 text-white rounded mt-4"
-          >
-            Start Exploring
-          </button>
-        </div>
-        
+            <h1 className="text-4xl font-bold mb-4">Yosh! All good..</h1>
+            <p>Get ready to explore! Your information has been received. Let's discover new possibilities together.</p>
+            <button
+              onClick={handleNext}
+              className="w-full py-2 px-4 bg-green-600 text-white rounded mt-4"
+            >
+              Start Exploring
+            </button>
+          </div>
         )}
       </div>
     </div>
   );
-};
-
-
+}
