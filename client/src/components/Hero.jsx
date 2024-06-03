@@ -43,16 +43,7 @@ const Hero = () => {
                 </div>
             `,
             buttons: [
-                {
-                    text: `
-                        <div class="flex items-center space-x-2">
-                            <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
-                            <span>Back</span>
-                        </div>
-                        `,
-                    action: tour.back,
-                    classes: '!bg-gray-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-gray-700 focus:!outline-none focus:!ring-2 focus:!ring-gray-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
-                },
+               
                 {
                     text: `
                         <div class="flex items-center space-x-2">
@@ -277,10 +268,10 @@ const Hero = () => {
                     text: `
                         <div class="flex items-center space-x-2">
                             <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
-                            <span>Next</span>
+                            <span>Finish</span>
                         </div>
                         `,
-                    action: tour.next,
+                    action: tour.complete,
                     classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-orange-800 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
                 }
             ]
