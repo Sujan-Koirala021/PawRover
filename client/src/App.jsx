@@ -12,7 +12,10 @@ import FindHouseSit from './components/FindHouseSit'
 import FindPetSitter from './components/FindPetSitter'
 import FAQ from './components/faq'
 import Contact from './components/Contact'
-import SearchResults from './components/SearchResults'
+// import SearchResults from './components/PetSearchResults'
+import PetSearchResults from './components/PetSearchResults'
+import HouseSearchResults from './components/HouseSearchResults'
+
 function App() {
   const Layout = () => {
     return (
@@ -62,8 +65,12 @@ function App() {
         },
 
         {
-          path : '/search-results',
-          element: <SearchResults/>
+          path : '/pet-sitter-search-results',
+          element: <PetSearchResults/>
+        },
+        {
+          path : '/house-search-results',
+          element: <HouseSearchResults/>
         }
       ]
     },

@@ -13,7 +13,7 @@ export default function FindPetSitter() {
       setStep(step + 1);
     } else {
       // Redirect to search results page with state
-      navigate('/search-results', { state: { location, selectedPets } });
+      navigate('/pet-sitter-search-results', { state: { location, selectedPets } });
     }
   };
 

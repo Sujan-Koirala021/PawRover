@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { FaMapMarkerAlt, FaStar, FaUser, FaPhone } from 'react-icons/fa';
 
 import avatar from '../assets/images/avatar.png'
-const SearchResults = () => {
+const PetSearchResults = () => {
   const location = useLocation();
   const { state } = location;
   const { location: userLocation, selectedPets } = state || {};
@@ -157,4 +157,4 @@ const SearchResults = () => {
   );
 };
 
-export default SearchResults;
+export default PetSearchResults;

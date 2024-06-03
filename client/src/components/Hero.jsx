@@ -23,10 +23,10 @@ const Hero = () => {
     useEffect(() => {
         const tour = new Shepherd.Tour({
             defaultStepOptions: {
-                classes: 'shadow-md bg-purple-dark',
+                classes: 'shadow-md bg-purple-dark ',
                 scrollTo: { behavior: 'smooth', block: 'center' }
             },
-            useModalOverlay: true
+            useModalOverlay: false
         });
 
         tour.addStep({
@@ -35,7 +35,7 @@ const Hero = () => {
                 <div class="tour-step">
                     <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
-                        <h3>Welcome! I am Speedy the Rabbit.</h3>
+                        <h3 class="font-bold underline">Welcome! I am Speedy the Rabbit.</h3>
                         <p class="font-mono">Join me for a tour around Paw Rover and discover all the features!</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const Hero = () => {
                 <div class="tour-step">
                     <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
-                        <h3>About Us</h3>
+                        <h3 class = "font-bold underline">About Us</h3>
                         <p class="font-mono">Learn more about Paw Rover and our mission!</p>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const Hero = () => {
                 <div class="tour-step">
                     <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
-                        <h3>How It Works</h3>
+                        <h3 class = "font-bold underline">How It Works</h3>
                         <p class="font-mono">Discover the simple process of finding a pet sitter or offering your home for sitting!</p>
                     </div>
                 </div>
@@ -141,7 +141,7 @@ const Hero = () => {
                 <div class="tour-step">
                     <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
-                        <h3>Find a Pet Sitter</h3>
+                        <h3 class="font-bold underline">Find a Pet Sitter</h3>
                         <p class="font-mono">Explore our network of trusted pet sitters ready to care for your furry friends!</p>
                     </div>
                 </div>
@@ -168,7 +168,7 @@ const Hero = () => {
                     <div class="tour-step">
                         <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                         <div>
-                            <h3>Explore Homes to Sit</h3>
+                            <h3 class="font-bold underline">Explore Homes to Sit</h3>
                             <p class="font-mono">Discover unique homes around the world where you can stay for free by caring for pets!</p>
                         </div>
                     </div>
