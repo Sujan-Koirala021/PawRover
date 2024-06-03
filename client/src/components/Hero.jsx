@@ -8,13 +8,20 @@ import rabbit3 from '../assets/images/rabbit3.gif';
 import rabbit4 from '../assets/images/rabbit4.gif';
 import rabbit5 from '../assets/images/rabbit5.gif';
 import rabbit6 from '../assets/images/rabbit6.gif';
+import rabbit7 from '../assets/images/rabbit7.gif';
+import rabbit8 from '../assets/images/rabbit8.gif';
+import rabbit9 from '../assets/images/rabbit9.gif';
+import rabbit10 from '../assets/images/rabbit10.gif';
+
+
+
 import Shepherd from 'shepherd.js';
 import 'shepherd.js/dist/css/shepherd.css';
 import './HeroTour.css'; // Import CSS file for tour styling
 
 const Hero = () => {
     const [rabbitIndex, setRabbitIndex] = useState(0);
-    const rabbitImages = [rabbit1, rabbit2, rabbit3, rabbit4, rabbit5, rabbit6];
+    const rabbitImages = [rabbit1, rabbit2, rabbit3, rabbit4, rabbit5, rabbit6, rabbit7, rabbit8, rabbit9, rabbit10];
 
 
     const getRandomRabbitIndex = () => Math.floor(Math.random() * rabbitImages.length);
@@ -37,7 +44,7 @@ const Hero = () => {
                 <div class="tour-step">
                     <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
-                        <h3 class="font-bold underline">Welcome! I am Speedy the Rabbit.</h3>
+                        <h3 class="font-bold underline">Welcome! I am Bunny the Rabbit.</h3>
                         <p class="font-mono">Join me for a tour around Paw Rover and discover all the features!</p>
                     </div>
                 </div>
