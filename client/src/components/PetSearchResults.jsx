@@ -57,8 +57,8 @@ const PetSearchResults = () => {
       <h1 className="text-4xl font-bold mb-4 flex justify-center mt-4">Search Results</h1>
       {filteredPersonnel.length > 0 ? (
         <p className="mb-2 flex justify-center">
-          {filteredPersonnel.length} search results found in {' '}
-          <strong>{userLocation}</strong> for the following pets:
+          {filteredPersonnel.length} search results found in  {' '} 
+          <strong className='px-2'>{userLocation}</strong> for the following pets:
         </p>
       ) : (
         <p className="mb-2 flex justify-center">

@@ -17,7 +17,7 @@ const HouseSearchResults = () => {
     { id: 3, name: 'Country House Retreat', description: 'Tranquil retreat in the countryside', duration: '3 days', rating: 4.8, location: 'Chicago' },
     { id: 4, name: 'Modern Loft near the Beach', description: 'Stylish loft just steps away from the beach', duration: '1 month', rating: 4.6, location: 'Miami' },
     { id: 5, name: 'Mountain Cabin Getaway', description: 'Cozy cabin nestled in the mountains', duration: '2 weeks', rating: 4.8, location: 'Denver' },
-    { id: 6, name: 'Lakefront Cottage Escape', description: 'Charming cottage with lakefront views', duration: '1 week', rating: 4.9, location: 'Seattle' },
+    { id: 6, name: 'Lakefront Cottage Escape', description: 'Charming cottage with lakefront views', duration: '1 week', rating: 4.9, location: 'New York' },
     { id: 7, name: 'Rural Farmhouse Retreat', description: 'Authentic farmhouse experience in the countryside', duration: '3 days', rating: 4.7, location: 'Nashville' },
     { id: 8, name: 'Luxury Penthouse in the Sky', description: 'Elegant penthouse with panoramic city views', duration: '2 months', rating: 4.8, location: 'San Francisco' },
     { id: 9, name: 'Historic Townhouse in the Heart of the City', description: 'Quaint townhouse with historic charm', duration: '1 month', rating: 4.9, location: 'Boston' },
@@ -35,11 +35,11 @@ const HouseSearchResults = () => {
       {filteredHouseSits.length > 0 ? (
         <p className="mb-2 flex justify-center">
           {filteredHouseSits.length} search results found in {' '}
-          <strong>{userLocation}</strong> for <strong>{duration}</strong>.
+          <strong className='px-2'>{userLocation}</strong> for <strong className='px-2'>{duration}</strong>.
         </p>
       ) : (
         <p className="mb-2 flex justify-center">
-          No search results found in <strong>{userLocation}</strong> for <strong>{duration}</strong>.
+          No search results found in <strong className='px-2'>{userLocation}</strong> for <strong className='px-2'>{duration}</strong>.
         </p>
       )}
 
