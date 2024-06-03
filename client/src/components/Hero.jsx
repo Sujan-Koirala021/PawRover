@@ -16,6 +16,8 @@ const Hero = () => {
     const [rabbitIndex, setRabbitIndex] = useState(0);
     const rabbitImages = [rabbit1, rabbit2, rabbit3, rabbit4, rabbit5, rabbit6];
 
+
+    const getRandomRabbitIndex = () => Math.floor(Math.random() * rabbitImages.length);
     const handleRabbitClick = () => {
         setRabbitIndex((prevIndex) => (prevIndex + 1) % rabbitImages.length);
     };
@@ -33,7 +35,7 @@ const Hero = () => {
             id: 'welcome',
             text: `
                 <div class="tour-step">
-                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
                         <h3 class="font-bold underline">Welcome! I am Speedy the Rabbit.</h3>
                         <p class="font-mono">Join me for a tour around Paw Rover and discover all the features!</p>
@@ -58,7 +60,7 @@ const Hero = () => {
             id: 'about',
             text: `
                 <div class="tour-step">
-                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
                         <h3 class = "font-bold underline">About Us</h3>
                         <p class="font-mono">Learn more about Paw Rover and our mission!</p>
@@ -85,7 +87,7 @@ const Hero = () => {
             id: 'how-it-works',
             text: `
                 <div class="tour-step">
-                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
                         <h3 class = "font-bold underline">How It Works</h3>
                         <p class="font-mono">Discover the simple process of finding a pet sitter or offering your home for sitting!</p>
@@ -112,7 +114,7 @@ const Hero = () => {
             id: 'contact',
             text: `
                 <div class="tour-step">
-                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
                         <h3 class="font-bold underline">Contact Us</h3>
                         <p class="font-mono">Get in touch with our team for any inquiries or support!</p>
@@ -139,7 +141,7 @@ const Hero = () => {
             id: 'find-pet-sitter',
             text: `
                 <div class="tour-step">
-                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
                         <h3 class="font-bold underline">Find a Pet Sitter</h3>
                         <p class="font-mono">Explore our network of trusted pet sitters ready to care for your furry friends!</p>
@@ -156,103 +158,102 @@ const Hero = () => {
                             <span>Next</span>
                         </div>
                         `,
-                        action: tour.next,
-                        classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
-                    }
-                ]
-            });
-    
-            tour.addStep({
-                id: 'find-house-sit',
-                text: `
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'find-house-sit',
+            text: `
                     <div class="tour-step">
-                        <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                        <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                         <div>
                             <h3 class="font-bold underline">Explore Homes to Sit</h3>
                             <p class="font-mono">Discover unique homes around the world where you can stay for free by caring for pets!</p>
                         </div>
                     </div>
                 `,
-                attachTo: { element: 'a[href="/find-house-sit"]', on: 'bottom-end' },
-    
-                buttons: [
-                    {
-                        text: `
+            attachTo: { element: 'a[href="/find-house-sit"]', on: 'bottom-end' },
+
+            buttons: [
+                {
+                    text: `
                             <div class="flex items-center space-x-2">
                                 <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
                                 <span>Next</span>
                             </div>
                         `,
-                        action: tour.next,
-                        classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
-                    }
-                ]
-            });
-    
-            tour.addStep({
-                id: 'faq',
-                text: `
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'faq',
+            text: `
                     <div class="tour-step">
-                        <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                        <img id="tour-rabbit-image" src="${rabbitImages[getRandomRabbitIndex()]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                         <div>
                             <h3>FAQs</h3>
                             <p class="font-mono">Get answers to commonly asked questions about Paw Rover and our services!</p>
                         </div>
                     </div>
                 `,
-                attachTo: { element: 'a[href="/faq"]', on: 'bottom-end' },
-    
-                buttons: [
-                    {
-                        text: `
+            attachTo: { element: 'a[href="/faq"]', on: 'bottom-end' },
+
+            buttons: [
+                {
+                    text: `
                             <div class="flex items-center space-x-2">
                                 <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
                                 <span>Finish</span>
                             </div>
                         `,
-                        action: tour.complete,
-                        classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
-                    }
-                ]
-            });
-    
-            tour.start();
-    
-            // Clean up the tour instance when the component unmounts
-            return () => {
-                tour.complete();
-            };
-        }, []);
-    
-        useEffect(() => {
-            const rabbitImage = document.getElementById('tour-rabbit-image');
-            if (rabbitImage) {
-                rabbitImage.src = rabbitImages[rabbitIndex];
-                rabbitImage.onclick = handleRabbitClick;
-            }
-        }, [rabbitIndex]);
-    
-        return (
-            <div
-                className="bg-cover bg-center relative"
-                style={{ backgroundImage: `url(${heroImage})`, height: 'calc(100vh - 64px)' }}
-            >
-                <div className="absolute inset-0 bg-black opacity-50"></div>
-                <div className="container mx-auto flex flex-col justify-center text-white relative z-10 h-full">
-                    <div className="text-left">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-10">Paw Rover</h1>
-                        <p className="text-lg md:text-xl max-w-md">Uncover special homestays across the globe, exchanging care for adorable pets for a free stay.</p>
-                        <Link to='/find-pet-sitter'>
-                            <button className="hero-button mr-12">Find a Pet Sitter &gt;</button>
-                        </Link>
-                        <Link to='/find-house-sit'>
-                            <button className="hero-button ml-6">Explore Homes to Sit &gt;</button>
-                        </Link>
-                    </div>
+                    action: tour.complete,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                }
+            ]
+        });
+
+        tour.start();
+
+        // Clean up the tour instance when the component unmounts
+        return () => {
+            tour.complete();
+        };
+    }, []);
+
+    useEffect(() => {
+        const rabbitImage = document.getElementById('tour-rabbit-image');
+        if (rabbitImage) {
+            rabbitImage.src = rabbitImages[rabbitIndex];
+            rabbitImage.onclick = handleRabbitClick;
+        }
+    }, [rabbitIndex]);
+
+    return (
+        <div
+            className="bg-cover bg-center relative"
+            style={{ backgroundImage: `url(${heroImage})`, height: 'calc(100vh - 64px)' }}
+        >
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="container mx-auto flex flex-col justify-center text-white relative z-10 h-full">
+                <div className="text-left">
+                    <h1 className="text-4xl md:text-6xl font-bold mb-10">Paw Rover</h1>
+                    <p className="text-lg md:text-xl max-w-md">Uncover special homestays across the globe, exchanging care for adorable pets for a free stay.</p>
+                    <Link to='/find-pet-sitter'>
+                        <button className="hero-button mr-12">Find a Pet Sitter &gt;</button>
+                    </Link>
+                    <Link to='/find-house-sit'>
+                        <button className="hero-button ml-6">Explore Homes to Sit &gt;</button>
+                    </Link>
                 </div>
             </div>
-        );
-    };
-    
-    export default Hero;
-    
+        </div>
+    );
+};
+
+export default Hero;

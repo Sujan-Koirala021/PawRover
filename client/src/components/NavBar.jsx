@@ -13,7 +13,7 @@ export default function NavBar() {
     };
 
     return (
-        <nav className='bg-white shadow-lg py-4 px-6'>
+        <nav className='bg-slate-300 shadow-lg py-4 px-6'>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center'>
                     <Link to="/">
