@@ -9,7 +9,7 @@ export default function FAQ() {
     };
 
     return (
-        <div className="flex flex-col lg:flex-row p-8 rounded-lg shadow-lg">
+        <div className="flex flex-col lg:flex-row p-8 rounded-lg ">
             <div className="flex-1 mb-8 lg:mb-0 lg:mr-8">
                 <h2 className="text-4xl font-bold mb-4">You’re probably wondering...</h2>
                 <img src={faqImage} alt="FAQ illustration" className="rounded-lg mt-4" />
