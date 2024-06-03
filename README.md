@@ -47,7 +47,7 @@ Welcome to Paw Rover, the ultimate platform designed to connect pet lovers with 
 - Interactive tour for new users
 
 ## Demo
-<video src="https://github.com/Sujan-Koirala021/moniker-maven/assets/84112374/83191134-73b8-4c3d-b9d8-562270ba01b9"></video>
+<video src="https://github.com/Sujan-Koirala021/PawRover/assets/84112374/e8396c22-f144-4426-adb7-f4f4250babd9"></video>
 
 
 
