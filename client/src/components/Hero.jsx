@@ -1,14 +1,25 @@
-// Import necessary dependencies
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import heroImage from '../assets/images/pet-sitter-hero.jpg';
-import tortoiseImg from '../assets/images/turtle2.gif';
-import rabbitImg from '../assets/images/rabbit1.gif';
+import nextBtnImg from '../assets/images/pawImg.png';
+import rabbit1 from '../assets/images/rabbit1.gif';
+import rabbit2 from '../assets/images/rabbit2.gif';
+import rabbit3 from '../assets/images/rabbit3.gif';
+import rabbit4 from '../assets/images/rabbit4.gif';
+import rabbit5 from '../assets/images/rabbit5.gif';
+import rabbit6 from '../assets/images/rabbit6.gif';
 import Shepherd from 'shepherd.js';
 import 'shepherd.js/dist/css/shepherd.css';
 import './HeroTour.css'; // Import CSS file for tour styling
 
 const Hero = () => {
+    const [rabbitIndex, setRabbitIndex] = useState(0);
+    const rabbitImages = [rabbit1, rabbit2, rabbit3, rabbit4, rabbit5, rabbit6];
+
+    const handleRabbitClick = () => {
+        setRabbitIndex((prevIndex) => (prevIndex + 1) % rabbitImages.length);
+    };
+
     useEffect(() => {
         const tour = new Shepherd.Tour({
             defaultStepOptions: {
@@ -22,25 +33,68 @@ const Hero = () => {
             id: 'welcome',
             text: `
                 <div class="tour-step">
-                    <img src="${tortoiseImg}" alt="Tortoise" class="tour-image">
+                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
                     <div>
-                        <h3>Welcome! I am Turbo the Tortoise.</h3>
-                        <p>Yes, I'm the one who beat the rabbit in the race. Let's see if I can guide you through Paw Rover faster than Speedy!</p>
+                        <h3>Welcome! I am Speedy the Rabbit.</h3>
+                        <p>Join me for a tour around Paw Rover and discover all the features!</p>
                     </div>
                 </div>
             `,
             buttons: [
                 {
-                    text: 'Next',
-                    action: tour.next
+                    text: `
+                        <div class="flex items-center space-x-2">
+                            <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                            <span>Next</span>
+                        </div>
+                    `,
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
                 }
             ]
         });
 
-        // Add more steps for the tour
+        tour.addStep({
+            id: 'find-pet-sitter',
+            text: 'Click here to find a pet sitter.',
+            attachTo: { element: 'a[href="/find-pet-sitter"]', on: 'right' },
+            buttons: [
+                {
+                    text: 'Next',
+                    action: tour.next,
+                    classes: 'bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-300 ease-in-out flex items-center space-x-2'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'find-house-sit',
+            text: 'Click here to explore homes to sit.',
+            attachTo: { element: 'a[href="/find-house-sit"]', on: 'right' },
+            buttons: [
+                {
+                    text: 'Finish',
+                    action: tour.complete,
+                    classes: 'bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-300 ease-in-out flex items-center space-x-2'
+                }
+            ]
+        });
 
         tour.start();
+
+        // Clean up the tour instance when the component unmounts
+        return () => {
+            tour.complete();
+        };
     }, []);
+
+    useEffect(() => {
+        const rabbitImage = document.getElementById('tour-rabbit-image');
+        if (rabbitImage) {
+            rabbitImage.src = rabbitImages[rabbitIndex];
+            rabbitImage.onclick = handleRabbitClick;
+        }
+    }, [rabbitIndex]);
 
     return (
         <div

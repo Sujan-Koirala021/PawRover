@@ -1,0 +1,30 @@
+.tour-step {
+    position: relative;
+    padding: 20px;
+    background-color: #b2cfed;
+    border: 2px solid red;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Adjust the max-width as needed */
+}
+
+/* Increase specificity */
+body .shepherd-modal-overlay {
+    border-color: red !important;
+}
+
+
+.tour-step::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 50px;
+    height: 30px;
+    background: #ffffff;
+    border: 2px solid #ccc;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top: 0;
+    z-index: -1;
+}
