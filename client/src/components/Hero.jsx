@@ -54,34 +54,175 @@ const Hero = () => {
             ]
         });
 
+
+        tour.addStep({
+            id: 'about',
+            text: `
+                <div class="tour-step">
+                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <div>
+                        <h3>About us.</h3>
+                        <p>about ...!</p>
+                    </div>
+                </div>
+            `,
+            attachTo: { element: 'a[href="/about"]', on: 'bottom-end' },
+
+            buttons: [
+                {
+                    text: `
+                        <div class="flex items-center space-x-2">
+                            <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                            <span>Next</span>
+                        </div>
+                    `,
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'how-it-works',
+            text: `
+                <div class="tour-step">
+                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <div>
+                        <h3>How it works.</h3>
+                        <p>how it works...!</p>
+                    </div>
+                </div>
+            `,
+            attachTo: { element: 'a[href="/how-it-works"]', on: 'bottom-end' },
+
+            buttons: [
+                {
+                    text: `
+                        <div class="flex items-center space-x-2">
+                            <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                            <span>Next</span>
+                        </div>
+                    `,
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                }
+            ]
+        });
+
+        tour.addStep({
+            id: 'contact',
+            text: `
+                <div class="tour-step">
+                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <div>
+                        <h3>Contact.</h3>
+                        <p>Contact us...!</p>
+                    </div>
+                </div>
+            `,
+            attachTo: { element: 'a[href="/contact"]', on: 'bottom-end' },
+
+            buttons: [
+                {
+                    text: `
+                        <div class="flex items-center space-x-2">
+                            <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                            <span>Next</span>
+                        </div>
+                    `,
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                }
+            ]
+        });
         tour.addStep({
             id: 'find-pet-sitter',
-            text: 'Click here to find a pet sitter.',
-            attachTo: { element: 'a[href="/find-pet-sitter"]', on: 'right' },
+            text: `
+                <div class="tour-step">
+                    <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                    <div>
+                        <h3>FAQ.</h3>
+                        <p>faqs...!</p>
+                    </div>
+                </div>
+            `,
+            attachTo: { element: 'a[href="/find-pet-sitter"]', on: 'bottom-end' },
+
             buttons: [
                 {
-                    text: 'Next',
+                    text: `
+                        <div class="flex items-center space-x-2">
+                            <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                            <span>Next</span>
+                        </div>
+                    `,
                     action: tour.next,
-                    classes: 'bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-300 ease-in-out flex items-center space-x-2'
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
                 }
             ]
         });
 
+        
+        
         tour.addStep({
             id: 'find-house-sit',
-            text: 'Click here to explore homes to sit.',
-            attachTo: { element: 'a[href="/find-house-sit"]', on: 'right' },
+            text: `
+            <div class="tour-step">
+            <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+            <div>
+            <h3>FAQ.</h3>
+            <p>faqs...!</p>
+            </div>
+            </div>
+            `,
+            attachTo: { element: 'a[href="/find-house-sit"]', on: 'bottom-end' },
+            
             buttons: [
                 {
-                    text: 'Finish',
-                    action: tour.complete,
-                    classes: 'bg-green-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75 transition duration-300 ease-in-out flex items-center space-x-2'
+                    text: `
+                    <div class="flex items-center space-x-2">
+                    <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                    <span>Next</span>
+                    </div>
+                    `,
+                    action: tour.next,
+                    classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
                 }
             ]
         });
+        
+                tour.addStep({
+                    id: 'faq',
+                    text: `
+                        <div class="tour-step">
+                            <img id="tour-rabbit-image" src="${rabbitImages[rabbitIndex]}" alt="Rabbit" class="tour-image w-32 h-32"/>
+                            <div>
+                                <h3>FAQ.</h3>
+                                <p>faqs...!</p>
+                            </div>
+                        </div>
+                    `,
+                    attachTo: { element: 'a[href="/faq"]', on: 'bottom-end' },
+        
+                    buttons: [
+                        {
+                            text: `
+                                <div class="flex items-center space-x-2">
+                                    <img src="${nextBtnImg}" alt="Paw" class="w-7 h-7"/>
+                                    <span>Finish</span>
+                                </div>
+                            `,
+                            action: tour.complete,
+                            classes: '!bg-orange-500 !text-black !px-4 !py-2 !rounded-full !shadow-md hover:!bg-green-600 focus:!outline-none focus:!ring-2 focus:!ring-green-400 focus:!ring-opacity-75 !transition !duration-300 !ease-in-out'
+                        }
+                    ]
+                });
 
+        
+        
+        
         tour.start();
-
+        
         // Clean up the tour instance when the component unmounts
         return () => {
             tour.complete();
