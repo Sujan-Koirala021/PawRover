@@ -47,9 +47,6 @@ Welcome to Paw Rover, the ultimate platform designed to connect pet lovers with 
 - Interactive tour for new users
 
 ## Impact Statement
-Here's an impact statement for Paw Rover:
-
-**Impact Statement**  
 Paw Rover revolutionizes the pet care industry by providing a global platform that bridges the gap between pet owners and sitters, fostering trust, and creating meaningful connections. By offering a seamless experience to find reliable pet sitters and pet-friendly homestays, Paw Rover empowers pet lovers to travel with confidence, ensuring the well-being of their pets. Our focus on user ratings and interactive tools ensures transparency, safety, and ease, transforming the way people experience pet care and homestays around the world.
 
 ## Demo
